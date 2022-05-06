@@ -177,9 +177,9 @@ function ac(){
 function operationSelected(operator){
     switch(operator){
         case "plus":
-            flagOperation=1;
-            operation = "plus";
-            result.textContent="0";
+            flagOperation=1; //se ingresa el primer numero y se trabaja ahora con el segundo
+            operation = "plus";//operacion seleccionada
+            result.textContent="0";//se limpia la pantalla
             break;
         case "minus":
             flagOperation=1;
@@ -203,10 +203,10 @@ function equal(){
     if(flagOperation==1 && temporal2!=""){
         switch(operation){
             case "plus":
-                flagOperation=0;
-                temporal1 = Number(temporal1)+Number(temporal2);
-                temporal2 = "";
-                result.textContent=temporal1.toString();
+                flagOperation=0;//Se reinicia le bandera de operacion
+                temporal1 = Number(temporal1)+Number(temporal2);//El resultado se pone en la variable 1 por si se desea hacer una nueva operacion con el resultado
+                temporal2 = "";//se limpia la variable 2 por si se desea agregar una nueva operacion de forma consecutiva
+                result.textContent=temporal1.toString();//el resultado se muestra en pantalla
                 break;
             case "minus":
                 flagOperation=0;
